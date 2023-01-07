@@ -7,6 +7,7 @@ Markov Chain Monte Carlo (MCMC) sampler for cross-ethnic polygenic prediction wi
 
 
 import scipy as sp
+import jax.scipy as jsp
 from scipy import linalg 
 from numpy import random
 import gigrnd
@@ -78,10 +79,10 @@ def mcmc(a, b, phi, snp_dict, beta_mrg, frq_dict, idx_dict, n, ld_blk, blk_size,
                 else:
                     idx_blk = range(mm,mm+blk_size[pp][kk])
                     dinvt = ld_blk[pp][kk]+sp.diag(1.0/psi_pp[idx_blk].T[0])
-                    dinvt_chol = linalg.cholesky(dinvt)
-                    beta_tmp = linalg.solve_triangular(dinvt_chol, beta_mrg[pp][idx_blk], trans='T') \
+                    dinvt_chol = jsp.linalg.cholesky(dinvt)
+                    beta_tmp = jsp.linalg.solve_triangular(dinvt_chol, beta_mrg[pp][idx_blk], trans='T') \
                                + sp.sqrt(sigma[pp]/n[pp])*random.randn(len(idx_blk),1)
-                    beta[pp][idx_blk] = linalg.solve_triangular(dinvt_chol, beta_tmp, trans='N')
+                    beta[pp][idx_blk] = jsp.linalg.solve_triangular(dinvt_chol, beta_tmp, trans='N')
                     quad += sp.dot(sp.dot(beta[pp][idx_blk].T, dinvt), beta[pp][idx_blk])
                     mm += blk_size[pp][kk]
 
