@@ -34,9 +34,9 @@ T Ge et al. Development and validation of a trans-ancestry polygenic risk score 
 
 - Clone this repository using the following git command:
 
-    `git clone https://github.com/getian107/PRScsx.git`
+    `git clone https://github.com/mglev1n/PRScsx.git`
 
-    Alternatively, download the source files from the github website (`https://github.com/getian107/PRScsx`)
+    Alternatively, download the source files from the github website (`https://github.com/mglev1n/PRScsx`)
     
 - Download the LD reference panels and extract files:
 
