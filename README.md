@@ -86,7 +86,7 @@ T Ge et al. Development and validation of a trans-ancestry polygenic risk score 
     
     UK Biobank reference: [SNP info](https://www.dropbox.com/s/oyn5trwtuei27qj/snpinfo_mult_ukbb_hm3?dl=0 "SNP info") (~108M)
     
-- PRScsx requires Python packages **scipy** (https://www.scipy.org/) and **h5py** (https://www.h5py.org/) installed.
+- PRScsx requires Python packages **scipy** (https://www.scipy.org/), **h5py** (https://www.h5py.org/), and **jax** (https://jax.readthedocs.io/en/latest/) installed.
  
 - Once Python and its dependencies have been installed, running
 
